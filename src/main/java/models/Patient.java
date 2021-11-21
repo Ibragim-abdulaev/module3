@@ -36,7 +36,7 @@ public class Patient {
 
     @Override
     public String toString() {
-        return "PatientID №" + id +
+        return "PatientID #" + id +
                 " | First name='" + first_name + '\'' +
                 " | last name='" + last_name + '\'' +
                 " | arrival date=" + arrival_date +

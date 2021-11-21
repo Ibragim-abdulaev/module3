@@ -35,7 +35,7 @@ public class DoctorService {
         List<Doctor> doctors = doctorDao.getAllDoctor();
         System.out.println();
         for (Doctor d : doctors) {
-            String s = "ID: №" + d.getId() + " | Last_name: " + d.getLast_name() + " | Profession: "
+            String s = "ID: #" + d.getId() + " | Last_name: " + d.getLast_name() + " | Profession: "
                     + d.getProfession() + " | Status is " + d.getStatus();
             System.out.println(s);
         }

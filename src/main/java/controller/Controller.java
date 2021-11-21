@@ -104,7 +104,7 @@ public class Controller {
         patientServices.readAllPatients();
         int idPat = 0;
         try {
-            System.out.print("Write id: №");
+            System.out.print("Write id: #");
             idPat = Integer.parseInt(bufferedReader.readLine());
         } catch (IOException e) {
             e.printStackTrace();
@@ -117,7 +117,7 @@ public class Controller {
                 patient.setStatus(PatientStatus.HEALTHY);
                 patient.setRecipe(null);
                 patient.getDoctors().clear();
-                System.out.println("Patient with ID №" + idPat + " is healthy");
+                System.out.println("Patient with ID #" + idPat + " is healthy");
                 patientServices.updatePatient(patient);
             } else {
                 System.out.println("Patient is dead");
