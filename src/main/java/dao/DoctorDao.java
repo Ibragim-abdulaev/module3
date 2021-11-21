@@ -4,8 +4,6 @@ import models.Doctor;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateUtils;
-
-import javax.persistence.Query;
 import java.util.List;
 
 public class DoctorDao {

@@ -27,16 +27,16 @@ public class CreateObjects {
         System.out.println("Create the Medications...");
 
         List<Medications> medications = new ArrayList<>();
-        medications.add(new Medications("Сeftriaxone", (short) 10, MedicationTypes.DROPPER));
-        medications.add(new Medications("Siofor", (short) 10, MedicationTypes.PILLS));
-        medications.add(new Medications("Sodium_Chloride", (short) 20, MedicationTypes.INJECTIONS));
-        medications.add(new Medications("Trombonete", (short) 20, MedicationTypes.PILLS));
-        medications.add(new Medications("Amoxil", (short) 10, MedicationTypes.DROPPER));
-        medications.add(new Medications("Aspirin", (short) 10, MedicationTypes.PILLS));
-        medications.add(new Medications("Penicillin", (short) 10, MedicationTypes.INJECTIONS));
-        medications.add(new Medications("Erius", (short) 100, MedicationTypes.PILLS));
-        medications.add(new Medications("Moflax", (short) 10, MedicationTypes.INJECTIONS));
-        medications.add(new Medications("Hepacef", (short) 10, MedicationTypes.DROPPER));
+        medications.add(new Medications("Сeftriaxone", (short) 15, MedicationTypes.DROPPER));
+        medications.add(new Medications("Siofor", (short) 20, MedicationTypes.PILLS));
+        medications.add(new Medications("Sodium_Chloride", (short) 25, MedicationTypes.INJECTIONS));
+        medications.add(new Medications("Trombonete", (short) 30, MedicationTypes.PILLS));
+        medications.add(new Medications("Amoxil", (short) 35, MedicationTypes.DROPPER));
+        medications.add(new Medications("Aspirin", (short) 40, MedicationTypes.PILLS));
+        medications.add(new Medications("Penicillin", (short) 45, MedicationTypes.INJECTIONS));
+        medications.add(new Medications("Erius", (short) 50, MedicationTypes.PILLS));
+        medications.add(new Medications("Moflax", (short) 55, MedicationTypes.INJECTIONS));
+        medications.add(new Medications("Hepacef", (short) 60, MedicationTypes.DROPPER));
 
         Thread.sleep(1000);
         System.out.println("Create the Recipe...");

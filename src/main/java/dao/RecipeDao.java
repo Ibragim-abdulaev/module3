@@ -78,26 +78,4 @@ public class RecipeDao {
             e.printStackTrace();
         }
     }
-
-    public Recipe addMedicationsToRecipe(Recipe recipe, List<Medications> medications) {
-        Transaction transaction = null;
-        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
-            transaction = session.beginTransaction();
-            List<Medications> oldMedications = recipe.getMedications();
-            medications.forEach(x -> {
-                if (!oldMedications.contains(x)) {
-                    oldMedications.add(x);
-                }
-            });
-            recipe.setMedications(oldMedications);
-            session.update(recipe);
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
-        return recipe;
-    }
 }
