@@ -36,7 +36,8 @@ public class Controller {
                     "Press 4: To change the Doctor status" + System.lineSeparator() +
                     "Press 5: Add new medications" + System.lineSeparator() +
                     "Press 6: Discharge the patient" + System.lineSeparator() +
-                    "Press 0: To finish" + System.lineSeparator()
+                    "Press 0: To finish" + System.lineSeparator() +
+                    "-------------------------------------" + System.lineSeparator()
             );
             System.out.print("Write number: ");
             try {
@@ -52,14 +53,13 @@ public class Controller {
                 case "4" -> changeStatusOfTheDoctor();
                 case "5" -> createMedication();
                 case "6" -> dischargeAPatient();
-                case "0" -> System.out.println("Application finished, good bye");
+                case "0" -> System.out.println("Application finished");
                 default -> System.out.println("Wrong, enter a number between 0 and 6");
             }
         } while (!action.equals("0"));
     }
 
     private void changeStatusOfTheDoctor() {
-        System.out.println(System.lineSeparator() + "Select ID Doctor, who status is changed:");
         doctorServices.readAllDoctors();
         int idDoc = 0;
         String title = "";
@@ -73,14 +73,13 @@ public class Controller {
         if (doctor == null) {
             System.out.println("Sorry, but doctor with this ID is not found...");
         } else {
-            System.out.println(System.lineSeparator() + "With status of this doctor now? Choose number from the list" +
-                    System.lineSeparator());
+            System.out.println();
             System.out.println(
                     "-----Doctor status-----" + System.lineSeparator() +
-                            "1: SICK" + System.lineSeparator() +
-                            "2: HOME" + System.lineSeparator() +
-                            "3: ON_OPERATION" + System.lineSeparator() +
-                            "default = FREE" + System.lineSeparator()
+                            "#1: Sick" + System.lineSeparator() +
+                            "#2: Home" + System.lineSeparator() +
+                            "#3: On_operation" + System.lineSeparator() +
+                            "-----------------------" + System.lineSeparator()
             );
             try {
                 System.out.print("Write number: ");
@@ -94,13 +93,12 @@ public class Controller {
                 case "3" -> doctor.setStatus(DoctorStatus.ON_OPERATION);
                 default -> doctor.setStatus(DoctorStatus.FREE);
             }
-            System.out.println("Doctor status is changed for " + doctor.getStatus());
+            System.out.println("Status changed for " + doctor.getStatus());
             doctorServices.updateDoctor(doctor);
         }
     }
 
     private void dischargeAPatient() {
-        System.out.println(System.lineSeparator() + "Please, enter ID patient, who is healthy.");
         patientServices.readAllPatients();
         int idPat = 0;
         try {
@@ -117,23 +115,23 @@ public class Controller {
                 patient.setStatus(PatientStatus.HEALTHY);
                 patient.setRecipe(null);
                 patient.getDoctors().clear();
-                System.out.println("Patient with ID #" + idPat + " is healthy");
+                System.out.println("Patient #" + idPat + " is healthy");
                 patientServices.updatePatient(patient);
             } else {
                 System.out.println("Patient is dead");
             }
         }
-
     }
 
     private void createMedication() {
         String title = null;
-        System.out.println(System.lineSeparator() + "Please, choose type of medication");
-        System.out.println(System.lineSeparator() +
+        System.out.println();
+        System.out.println(
                 "----Type medication----" + System.lineSeparator() +
-                "1: PILLS" + System.lineSeparator() +
-                "2: INJECTIONS" + System.lineSeparator() +
-                "3: DROPPER" + System.lineSeparator()
+                        "#1: Pills" + System.lineSeparator() +
+                        "#2: Injection" + System.lineSeparator() +
+                        "#3: Dropper" + System.lineSeparator() +
+                        "-----------------------"
         );
         try {
             System.out.print("Write number: ");
