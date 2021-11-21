@@ -44,7 +44,7 @@ class DoctorDaoTest {
     }
 
     @Test
-    void getByIdFromDB() {
+    void getById() {
         Doctor doctor = new Doctor("Doctor5", DoctorProfessions.THERAPIST);
         doctorDao.saveDoctor(doctor);
         Doctor doctors = doctorDao.getDoctorById(doctor.getId());
