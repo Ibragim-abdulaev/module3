@@ -95,7 +95,7 @@ public class Controller {
                 default -> doctor.setStatus(DoctorStatus.FREE);
             }
             System.out.println("Doctor status is changed for " + doctor.getStatus());
-            doctorServices.updateDoctorInfo(doctor);
+            doctorServices.updateDoctor(doctor);
         }
     }
 
